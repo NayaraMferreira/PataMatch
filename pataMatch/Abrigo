@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Abrigo {
+    private int id;
+    private String nome;
+    private String localizacao;
+    private List<Animais> animais;
+
+
+    public Abrigo(int id, String nome, String localizacao) {
+        this.id = id;
+        this.nome = nome;
+        this.localizacao = localizacao;
+        this.animais = new ArrayList<>();
+    }
+
+    public void adicionarAnimais(Animais animais) {
+        Animais.add(animais);
+    }
+
+    public int getId() {
+        return id;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    
+
+    public String toString() {
+        return "Abrigo{id=" + id + ", nome='" + nome + '\'' + ", localizacao='" + localizacao + '\'' + '}';
+    }
+}
+

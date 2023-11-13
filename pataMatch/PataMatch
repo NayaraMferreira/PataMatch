@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class PataMatchApp {
+    private List<Usuario> usuarios;
+    private List<Abrigo> abrigos;
+    private int nextUsuarioId;
+    private int nextAnimaisId;
+    private int nextAbrigoId;
+
+    public PataMatchApp() {
+        this.usuarios = new ArrayList<>();
+        this.abrigos = new ArrayList<>();
+        this.nextUsuarioId = 1;
+        this.nextAnimaisId = 1;
+        this.nextAbrigoId = 1;
+    }
+
+    public Usuario criarUsuario(String nome) {
+        Usuario usuario = new Usuario(nextUsuarioId++, nome);
+        usuarios.add(usuario);
+        return usuario;
+    }
+
+    public Animais criarAnimais(String nome, int idade, String temperamento, String historia) {
+        Animais animais = new Animais(nextAnimaisId++, nome, idade, temperamento, historia, AdocaoStatus.DISPONIVEL);
+        return animais;
+    }
+
+    public Abrigo criarAbrigo(String nome) {
+        Abrigo abrigo = new Abrigo(nextAbrigoId++, nome);
+        abrigos.add(abrigo);
+        return abrigo;
+    }
+
+    public void adicionarAnimaisAoAbrigo(Animais animais, Abrigo abrigo) {
+        abrigo.adicionarAnimais(Animais);
+    }
+
+    public void visualizarAnimaisDisponiveis() {
+        for (Abrigo abrigo : abrigos) {
+            System.out.println("Abrigo: " + abrigo);
+            List<Animais> animais = abrigo.getAnimais();
+            for (Cachorro cachorro : Animais) {
+                System.out.println(" - " + Animais);
+            }
+        }
+    }
+
+    public void criarPerfil(Usuario usuario, Animais animais) {
+        usuario.getAnimaisInteressados().add(animais);
+        System.out.println("Perfil criado! " + usuario.getNome() + " está interessado em " + animais.getNome());
+    }
+
+    public void enviarMensagem(Usuario remetente, Usuario destinatario, String conteudo) {
+        System.out.println("Mensagem de " + remetente.getNome() + " para " + destinatario.getNome() + ": " + conteudo);
+    }
+
+    public static void main(String[] args) {
+        PataMatchApp pataMatchApp = new PataMatchApp();
+
+        // Criar alguns usuários, abrigos e animais
+        Usuario usuario1 = pataMatchApp.criarUsuario("Ray");
+        Usuario usuario2 = pataMatchApp.criarUsuario("Nay");
+
+        Abrigo abrigo1 = pataMatchApp.criarAbrigo("Abrigo Feliz");
+        Abrigo abrigo2 = pataMatchApp.criarAbrigo("Lar dos patinhas");
+
+        Animais animais1 = pataMatchApp.criarAnimais("boby", 3, "Amigável e manhoso", "Cachorro adorável em busca de um lar");
+        Animais animais2 = pataMatchApp.criarAnimais("simba", 2, "Energético", " Gatinho adora brincar e correr");
+
+        // Adicionar cachorros aos abrigos
+        pataMatchApp.adicionarAnimaisAoAbrigo(animais1, abrigo1);
+        pataMatchApp.adicionarAnimaisAoAbrigo(animais2, abrigo2);
+
+        // Visualizar cachorros disponíveis
+        System.out.println("animais disponíveis para adoção:");
+        pataMatchApp.visualizarAnimaisDisponiveis();
+
+        // Criar perfis
+        pataMatchApp.criarPerfil
+
+    }
+}

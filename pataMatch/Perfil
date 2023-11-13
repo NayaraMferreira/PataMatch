@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Perfil {
+    private Usuario usuario;
+    private Animais animais;
+    private boolean status;
+
+    public Perfil(Usuario usuario, Animais animais, boolean status) {
+        this.usuario = usuario;
+        this.animais = animais;
+        this.status = status;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public Animais getAnimais() {
+        return animais;
+    }
+    public 
+
+    // Outros métodos getters/setters...
+}
